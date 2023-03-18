@@ -1,0 +1,32 @@
+#Importing modules.
+import sys
+try:
+    import pyperclip
+except ImportError:
+    pass
+
+while True: #The main cycle of the program.
+    while True:
+        x, operand, y = input().split()
+        x = int(x)
+        y = int(y)
+        if operand == '+':
+            result = x + y
+        elif operand == '-':
+            result = x - y
+        elif operand == '*':
+            result = x * y
+        elif operand == '/':
+            result = x / y
+        elif operand == '**':
+            result = x ** y
+        else:
+            sys.exit()
+        print(result)
+
+
+try:
+    pyperclip.copy(result)
+    print('Result copied')
+except ImportError:
+    pass
